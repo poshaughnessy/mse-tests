@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MSE tests</title>
+  </head>
+  <body>
+    <h2>Is MSE supported?</h1>
+    <h1 id="result"></h1>
+    <script type="text/javascript">
+      var resultEl = document.getElementById('result');
+      var mimeCodec = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
+      if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {
+        // MediaSource(MSE) is supported.
+        // Blob URL could be set as video source.
+        result.innerText = 'Yes';
+      } else {
+        // MediaSource(MSE) is not supported.
+        // Need to implement fallback logic without blob source.
+        result.innerText = 'No';
+      }
+    </script>
+  </body>
